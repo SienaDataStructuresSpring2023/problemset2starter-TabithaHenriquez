@@ -7,6 +7,10 @@
  */
 public class Portfolio
 {
+    private int stocksHeld; 
+    private int lifeInvest;
+    private int lifePayout;
+
     public static Portfolio sellStock(String symbol, int numShares){
         return numShares;
     }
