@@ -10,6 +10,7 @@ public class StockHolding
     private String name;
     private int numShares;
     private int price;
+
     public StockHolding(String symbol, String name, int numShares, int price) {
         this.symbol = symbol;
         this.name = name;
@@ -28,13 +29,23 @@ public class StockHolding
     public int getPrice() {
         return price;
     }
-    public static int buyShares(int numShares, int price) {
-        
-        return 1;
+
+    public void buyShares(int numShares, int price) {
+        int updatedShares = numShares;
+        int updatedPrice = price;
+        numShares = updatedShares;
+        price = updatedPrice;
     }
-    public static int sellShares(int numShares) {
-       
-        return 1;
+
+    public int sellShares(int numShares) {
+        //Share is sold
+        if(numShares >= getNumShares()){
+            return numShares*getPrice();
+        }
+        //Share is not sold
+        else{
+            return null;
+        }
     }
     @Override
     public String toString()
