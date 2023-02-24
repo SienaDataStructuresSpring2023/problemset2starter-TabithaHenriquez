@@ -94,7 +94,7 @@ public class Portfolio
         return payout;
     }
 
-    public static int getCurrentValue(){
+    public int getCurrentValue(){
         //Sums the number of shares times the price per share
         int currentValue = numShares * price;
         //Returns the current value of the portfolio
