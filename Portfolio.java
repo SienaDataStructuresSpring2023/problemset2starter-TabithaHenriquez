@@ -11,7 +11,6 @@ public class Portfolio
     private int stocksHeld; 
     private int lifeInvest;
     private int lifePayout;
-
     public Portfolio(){
         this.stocksHeld = 0;
         this.lifeInvest = 0;
@@ -28,9 +27,9 @@ public class Portfolio
     }
 
     //Returns the index of the stock in ArrayList if it exists.
-    private static String getIndex(String symbol) {
+    public int getIndex(String symbol) {
         //Indexing through the StocksHolding ArrayList.
-        for (i=0; i < StocksHolding.size; i++){
+        for (int i = 0; i < StocksHolding.size; i++){
             //If the symbol is found in the ArrayList, return the index.
             if(symbol == StocksHolding.get(i)){
                 return i;
@@ -44,10 +43,10 @@ public class Portfolio
  
     public int buyStock(String symbol, String name, int numShares, int price ){
         //If symbol is in the ArrayList, buy at input price.
-        for (i=0;i<StocksHolding.size;i++){
+        for (int i = 0;i < StocksHolding.size; i++){
             if (symbol == StocksHolding.get(i)){
                 //Purchase the amount of stock for the input amount purchased.
-                j = 0;
+                int j = 0;
                 while (j <= numShares){
                     StocksHolding.add(symbol);
                     lifeInvest = lifeInvest + price;
@@ -58,7 +57,7 @@ public class Portfolio
             //Otherwise, stock should be added to ArrayList and updated stocks held by portfolio.
             else{
                 //Add stock to ArrayList for the amount purchsed.
-                j = 0;
+                int j = 0;
                 while (j <= numShares){
                     StocksHolding.add(symbol);
                     lifeInvest = lifeInvest + price;
@@ -74,7 +73,7 @@ public class Portfolio
         int sharesInPortfolio = 0;
         
         //Searching through ArrayList for input stock.
-        for (i=0;i<StocksHolding.size;i++){ 
+        for (int i = 0; i < StocksHolding.size; i++){ 
             //Determine the amount of shares in the portfolio.
             if (symbol == StocksHolding.get(i)){
                 sharesInPortfolio++;
